@@ -30,9 +30,7 @@ public class ProductDescriptionService {
         return chatClient
                 .prompt()
                 .system(getCategoryPrompt(request.getCategory()))
-                .user("Generate a product description for: " + request.getProductName() +
-                        ". If the category is MOBILE_PHONE, structure the response as: " +
-                        "Product Description, Key Features, and Marketing Tagline in clearly separated sections.")
+                .user("Generate a product description for: " + request.getProductName())
                 .call()
                 .content();
     }
